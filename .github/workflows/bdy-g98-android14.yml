@@ -112,7 +112,7 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 BDY-G98 Khadas Android14 Uboot
+            # 彼度云 BDY-G98/Z98 Khadas Android14 Uboot
 
             ## 免责声明
 
@@ -145,7 +145,7 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 BDY G98 Khadas Android14 Kernel
+            # 彼度云 BDY-G98/Z98 Khadas Android14 Kernel
 
             **测试中，无法引导，不要下载**
 
@@ -167,8 +167,8 @@ jobs:
           cd ${WORKDIR}
           sudo ./build-update.sh
           TIMESTAMP=$(date +%Y%m%d)
-          sudo cp rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc.img
-          sudo cp rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc-${TIMESTAMP}.img
+          sudo cp -a rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc.img
+          sudo cp -a rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc-${TIMESTAMP}.img
 
       - name: Upload Android14 to Release
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'android' }}
@@ -182,7 +182,7 @@ jobs:
           makeLatest: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 G98 Khadas Android14
+            # 彼度云 BDY-G98/Z98 Khadas Android14
 
             ## 免责声明
 

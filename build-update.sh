@@ -43,9 +43,10 @@ fi
 if [ ! -f boot.img ] ; then
   wget -q -c https://github.com/yifengyou/rockchip-khadas-android14/releases/download/bdy_g98_kernel/boot.img
 fi
-ls -alh *.img *.bin
+ls -alh
 
 # pack image
+echo "-----------------------------------------------------------------------"
 echo "Make update.img"
 cd ${PACK_TOOL_DIR}/rockdev && ./mkupdate.sh rk3588 Image
 
@@ -56,5 +57,6 @@ else
     exit 1
 fi
 
+echo "-----------------------------------------------------------------------"
 mv ${PACK_TOOL_DIR}/rockdev/update.img ${OUTPUT_DIR}
 ls -alh ${OUTPUT_DIR}
