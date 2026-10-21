@@ -105,7 +105,7 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'uboot' }}
         uses: ncipollo/release-action@main
         with:
-          tag: bdy_g98_khadas_android14_uboot
+          tag: bdy_g98_uboot
           artifacts: /builder/release/uboot*.img
           allowUpdates: true
           removeArtifacts: false
@@ -138,14 +138,14 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'kernel' }}
         uses: ncipollo/release-action@main
         with:
-          tag: g98_android14_kernel
+          tag: bdy_g98_kernel
           artifacts: /builder/release/boot*.img
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 G98 Android14 Kernel
+            # 彼度云 BDY G98 Khadas Android14 Kernel
 
             **测试中，无法引导，不要下载**
 
@@ -174,7 +174,7 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'android' }}
         uses: ncipollo/release-action@main
         with:
-          tag: bdy_g98_khadas_android14
+          tag: bdy_g98_android14
           artifacts: /builder/release/BDY-G98-Anadoid*
           allowUpdates: true
           removeArtifacts: false
