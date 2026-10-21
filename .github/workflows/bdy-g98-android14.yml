@@ -1,9 +1,9 @@
-name: G98 Android14 khadas
+name: BDY G98 Khadas Android14
 
 on:
   push:
     branches:
-      - master
+      - bdy-g98
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -105,18 +105,14 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'uboot' }}
         uses: ncipollo/release-action@main
         with:
-          tag: g98_android14_uboot
+          tag: bdy_g98_khadas_android14_uboot
           artifacts: /builder/release/uboot*.img
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 G98 Android14 Uboot
-
-            **测试中，无法引导，不要下载**
-
-            ## 固件下载与刷写指引
+            # 彼度云 BDY-G98 Khadas Android14 Uboot
 
             ## 免责声明
 
@@ -178,7 +174,7 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'android' }}
         uses: ncipollo/release-action@main
         with:
-          tag: g98_android14
+          tag: bdy_g98_khadas_android14
           artifacts: /builder/release/BDY-G98-Anadoid*
           allowUpdates: true
           removeArtifacts: false
@@ -186,12 +182,11 @@ jobs:
           makeLatest: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 G98 Android14
-
-            ## 固件下载与刷写指引
+            # 彼度云 G98 Khadas Android14
 
             ## 免责声明
 
             - **按原样提供**：本镜像不作任何明示或暗示的保证，使用风险由用户自行承担。
             - **无官方关联**：本项目与 Rockchip、彼度云 任何商业实体无关，为非盈利自由分享。
             - **安全提示**：部署后请及时更新安全补丁、修改默认密码、配置防火墙及访问控制策略。
+
