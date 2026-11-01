@@ -3,3 +3,4 @@
 /u-boot/examples/standalone/rkspi
 /u-boot/tee.bin.gz
 /u-boot/fit/uboot.itb
+/kernel-6.1/resource.img

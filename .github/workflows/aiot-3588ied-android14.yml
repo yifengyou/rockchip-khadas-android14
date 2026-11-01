@@ -167,8 +167,8 @@ jobs:
           cd ${WORKDIR}
           sudo ./build-update.sh
           TIMESTAMP=$(date +%Y%m%d)
-          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14-only-emmc.img
-          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14-only-emmc-${TIMESTAMP}.img
+          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14.img
+          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14-${TIMESTAMP}.img
 
       - name: Upload Android14 to Release
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'android' }}
