@@ -1,9 +1,9 @@
-name: BDY G98 Khadas Android14
+name: AIoT 3588IED Khadas Android14
 
 on:
   push:
     branches:
-      - bdy-g98
+      - aiot-3588ied
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -105,19 +105,19 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'uboot' }}
         uses: ncipollo/release-action@main
         with:
-          tag: bdy_g98_uboot
+          tag: aiot_3588ied_uboot
           artifacts: /builder/release/uboot*.img
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 BDY-G98/Z98 Khadas Android14 Uboot
+            # 视美泰 AIoT-3588IED Khadas Android14 Uboot
 
             ## 免责声明
 
             - **按原样提供**：本镜像不作任何明示或暗示的保证，使用风险由用户自行承担。
-            - **无官方关联**：本项目与 Rockchip、彼度云 任何商业实体无关，为非盈利自由分享。
+            - **无官方关联**：本项目与 Rockchip、视美泰 任何商业实体无关，为非盈利自由分享。
             - **安全提示**：部署后请及时更新安全补丁、修改默认密码、配置防火墙及访问控制策略。
 
       - name: Build Kernel 6.1
@@ -138,14 +138,14 @@ jobs:
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'kernel' }}
         uses: ncipollo/release-action@main
         with:
-          tag: bdy_g98_kernel
+          tag: aiot_3588ied_kernel
           artifacts: /builder/release/boot*.img
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 BDY-G98/Z98 Khadas Android14 Kernel
+            # 视美泰 AIoT-3588IED Khadas Android14 Kernel
 
             **测试中，无法引导，不要下载**
 
@@ -154,7 +154,7 @@ jobs:
             ## 免责声明
 
             - **按原样提供**：本镜像不作任何明示或暗示的保证，使用风险由用户自行承担。
-            - **无官方关联**：本项目与 Rockchip、彼度云 任何商业实体无关，为非盈利自由分享。
+            - **无官方关联**：本项目与 Rockchip、视美泰 任何商业实体无关，为非盈利自由分享。
             - **安全提示**：部署后请及时更新安全补丁、修改默认密码、配置防火墙及访问控制策略。
 
       - name: Build Android
@@ -167,26 +167,26 @@ jobs:
           cd ${WORKDIR}
           sudo ./build-update.sh
           TIMESTAMP=$(date +%Y%m%d)
-          sudo cp -a rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc.img
-          sudo cp -a rockdev/update.img /builder/release/BDY-G98-Anadoid14-only-emmc-${TIMESTAMP}.img
+          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14-only-emmc.img
+          sudo cp -a rockdev/update.img /builder/release/AIoT-3588IED-Anadoid14-only-emmc-${TIMESTAMP}.img
 
       - name: Upload Android14 to Release
         if: ${{ env.BUILD_TARGET == 'all' || env.BUILD_TARGET == 'android' }}
         uses: ncipollo/release-action@main
         with:
-          tag: bdy_g98_android14
-          artifacts: /builder/release/BDY-G98-Anadoid*
+          tag: aiot_3588ied_android14
+          artifacts: /builder/release/AIoT-3588IED-Anadoid*
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
           makeLatest: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            # 彼度云 BDY-G98/Z98 Khadas Android14
+            # 视美泰 AIoT-3588IED Khadas Android14
 
             ## 免责声明
 
             - **按原样提供**：本镜像不作任何明示或暗示的保证，使用风险由用户自行承担。
-            - **无官方关联**：本项目与 Rockchip、彼度云 任何商业实体无关，为非盈利自由分享。
+            - **无官方关联**：本项目与 Rockchip、视美泰 任何商业实体无关，为非盈利自由分享。
             - **安全提示**：部署后请及时更新安全补丁、修改默认密码、配置防火墙及访问控制策略。
 
