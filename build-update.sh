@@ -37,12 +37,22 @@ fi
 if [ ! -f super.img ] ; then
   wget -q -c https://github.com/yifengyou/rockchip-khadas-android14/releases/download/android14_base_image/super.img
 fi
+#if [ ! -f uboot.img ] ; then
+#  wget -q -c https://github.com/yifengyou/rockchip-khadas-android14/releases/download/bdy_g98_uboot/uboot.img
+#fi
+
 if [ ! -f uboot.img ] ; then
-  wget -q -c https://github.com/yifengyou/rockchip-khadas-android14/releases/download/bdy_g98_uboot/uboot.img
+  wget -q -c https://github.com/yifengyou/rockchip-uboot-mainline/releases/download/aiot-3588a-uboot/uboot.img
 fi
+
+if [ ! -f rkdev.img ] ; then
+  wget -q -c -O rkdev.img https://github.com/yifengyou/rockchip-ophub-linux-6.18.y/releases/download/aiot-3588ied-recovery/recovery.img
+fi
+
 if [ ! -f boot.img ] ; then
   wget -q -c https://github.com/yifengyou/rockchip-khadas-android14/releases/download/bdy_g98_kernel/boot.img
 fi
+
 ls -alh
 
 # pack image
